@@ -1,0 +1,107 @@
+#page-landing {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+}
+
+#page-landing .container {
+  width: 100%;
+  max-width: 600px;
+
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 20px;
+}
+
+#page-landing .container .logo-img {
+  margin-bottom: 30px;
+}
+
+#page-landing .container .finder,
+#page-landing .container .finder form {
+  width: 100%;
+  display: flex;
+}
+
+#page-landing .container .finder {
+  flex-direction: column;
+  align-items: center;
+}
+
+#page-landing .container .finder form {
+  justify-content: space-between;
+}
+
+#page-landing .container .finder form input {
+  width: calc(100% - 60px);
+  height: 40px;
+
+  padding: 10px;
+
+  border: 1px solid #c0c0c0;
+  border-radius: 5px;
+
+  font-size: 18px;
+}
+
+#page-landing .container .finder form button {
+  height: 40px;
+  width: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #83d4ed;
+  border: none;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#page-landing .container .finder form button:hover {
+  background: #6bc9e6;
+}
+
+#page-landing .container .result-container {
+  width: 100%;
+  max-width: 600px;
+
+  margin: 20px 0;
+  padding: 10px;
+
+  background: #fff;
+  border: 1px solid #c0c0c0;
+  border-radius: 5px;
+}
+
+#page-landing .container .result-container p {
+  font-size: 18px;
+  font-family: "Open Sans", sans-serif;
+
+  border-bottom: 1px solid #c0c0c01e;
+}
+
+#page-landing .container .cloudy-img {
+  margin-top: 30px;
+  max-width: 300px;
+}
+
+#page-landing .container .credits {
+  font-size: 12px;
+  color: #a7a7a7;
+  position: absolute;
+  bottom: 0;
+}
+
+#page-landing .container .credits a {
+  color: #969696;
+}
