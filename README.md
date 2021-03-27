@@ -4,7 +4,6 @@ Uma aplicação para facilitar a consulta de previsão do tempo
 
 Busque a cidade que deseja consultar a previsão do tempo pelo nome e obtenha informações de forma objetiva e rápida.
 
----
 
 ## Sobre
 
@@ -13,7 +12,6 @@ Esta aplicação está sendo construída por pelo menos dois motivos:
 - Facilitar, para os meus pais, a consulta da previsão do tempo diariamente;
 - Aplicar conceitos que estou aprendendo em React (estados, consumo de APIs) e Typescript.
 
----
 
 ## O que foi utilizado
 
@@ -22,7 +20,6 @@ Esta aplicação está sendo construída por pelo menos dois motivos:
 - [Axios](https://github.com/axios/axios)
 - [OpenWeatherMap API](https://openweathermap.org/api)
 
----
 
 ## Instruções de instalação e execução
 
