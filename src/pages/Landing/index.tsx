@@ -4,8 +4,7 @@ import api from "../../services/api";
 
 import "./styles.css";
 
-import logoImg from "../../assets/logo.svg";
-import cloudyImg from "../../assets/cloudy.svg";
+import cloudsImg from "../../assets/049-clouds.svg";
 
 interface WeatherData {
   current: {
@@ -47,11 +46,22 @@ export default function Landing() {
 
   return (
     <div id="page-landing">
-      <div className="container">
-        <img className="logo-img" src={logoImg} alt="Clima Fácil" />
-
+      <header>
+        <span className="credits">
+          Icons made by{" "}
+          <a href="https://www.freepik.com" title="Freepik">
+            Freepik
+          </a>{" "}
+          from{" "}
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            www.flaticon.com
+          </a>
+        </span>
+        <img className="weather-img" src={cloudsImg} alt="" />
+      </header>
+      <main className="container">
         <div className="finder">
-          <form onSubmit={searchCity}>
+          <form id="search-city" onSubmit={searchCity}>
             <input
               type="search"
               placeholder="Digite o nome da sua cidade"
@@ -64,46 +74,46 @@ export default function Landing() {
               <FaArrowRight color="#f5f2f2" />
             </button>
           </form>
-          {weatherCity ? (
-            <div className="result-container">
+          {weatherCity && (
+            <section className="result-container">
               <h1>{locale}</h1>
 
-              <p>
-                Temperatura atual:{" "}
+              <p className="current-temp">
                 {(Number(weatherCity?.current.temp) - 273.15).toFixed(1)} ºC
               </p>
-              <p>
-                Máx:{" "}
-                {(Number(weatherCity?.daily[0].temp.max) - 273.15).toFixed(1)}{" "}
-                ºC
-              </p>
-              <p>
-                Min:{" "}
-                {(Number(weatherCity?.daily[0].temp.min) - 273.15).toFixed(1)}{" "}
-                ºC
-              </p>
-              <p>Probabilidade: {Number(weatherCity?.daily[0].pop) * 100}%</p>
-              <p>Precipitação: {weatherCity?.daily[0].rain || 0} mm</p>
-            </div>
-          ) : (
-            <img
-              className="cloudy-img"
-              src={cloudyImg}
-              alt="Sol entre nuvens"
-            />
+              <ul className="max-min-temp">
+                <li>
+                  Máx{" "}
+                  <strong>
+                    {(Number(weatherCity?.daily[0].temp.max) - 273.15).toFixed(
+                      1
+                    )}{" "}
+                    ºC
+                  </strong>
+                </li>
+                <li>
+                  Min{" "}
+                  <strong>
+                    {(Number(weatherCity?.daily[0].temp.min) - 273.15).toFixed(
+                      1
+                    )}{" "}
+                    ºC
+                  </strong>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  Precip. <strong>{weatherCity?.daily[0].rain || 0} mm</strong>
+                </li>
+                <li>
+                  Probab.{" "}
+                  <strong>{Number(weatherCity?.daily[0].pop) * 100}%</strong>
+                </li>
+              </ul>
+            </section>
           )}
         </div>
-        <div className="credits">
-          Icons made by{" "}
-          <a href="https://www.freepik.com" title="Freepik">
-            Freepik
-          </a>{" "}
-          from{" "}
-          <a href="https://www.flaticon.com/" title="Flaticon">
-            www.flaticon.com
-          </a>
-        </div>
-      </div>
+      </main>
     </div>
   );
 }
